@@ -1,0 +1,23 @@
+<h1>Projects</h1>
+<form class="search" action="/project/search" method="GET">
+  <label>Seach: </label>
+  <input type="text" name="projectName">
+  <input type="submit" value="Search">
+</form>
+<div class="projects">
+  {{#if noProjects}}
+  <h3>No Projects available</h3>
+  {{else}}
+  {{#each projects}}
+  <div class="project">
+    <h2>{{name}}</h2>
+    {{#if team.name}}
+    <h3>{{team.name}}</h3>  
+    {{else}}
+    <h3>Team: No Team assigned</h3>
+    {{/if}}
+    <p>Description: {{description}}</p>
+  </div>
+  {{/each}}
+  {{/if}}
+</div>
